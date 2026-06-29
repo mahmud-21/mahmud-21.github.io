@@ -39,10 +39,26 @@
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
 
+    /* 
+        =====================================================
+        NEW COLORS ADDED FOR NEW SECTIONS
+        You can change these colors to match your preference
+        - --blue: used for skill tags background
+        - --grey-dark: used for education/cert cards
+        - --grey-light: used for subtle backgrounds
+        =====================================================
+    */
+    --blue: #1a6ef5;
+    --grey-dark: #111111;
+    --grey-light: #1a1a1a;
+    --tag-bg: rgba(255, 50, 88, 0.15);
+    --tag-border: rgba(255, 50, 88, 0.4);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
-    --container-medium-width: 700px; 
+    --container-medium-width: 700px;
     --container-small-width: 500px;
 
     --gutter-huge: 12rem;
@@ -52,6 +68,18 @@
     --gutter-small: 2rem;
 
     --border-light: 1px solid rgb(36, 35, 35);
+
+    /* 
+        =====================================================
+        NEW TRANSITIONS & EFFECTS
+        Controls animation speed across the site
+        =====================================================
+    */
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s ease;
+    --transition-slow: all 0.4s ease;
+    --box-shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --box-shadow-hover: 0 8px 30px rgba(255, 50, 88, 0.15);
 }
 
 html {
@@ -178,7 +206,7 @@ p {
 }
 
 @media(max-width: 900px) {
-    p { 
+    p {
         max-width: var(--container-small-width);
     }
 }
@@ -191,7 +219,7 @@ a {
     color: var(--white);
     font-weight: 400;
     font-family: 'Jost', sans-serif;
-    transition: all .2s;
+    transition: var(--transition-fast);
     outline: 2px solid transparent;
 }
 
@@ -219,7 +247,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 4.2rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid  var(--pink);
+    border: 1px solid var(--pink);
     font-weight: 400;
 }
 
@@ -248,7 +276,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .btn--pink {
     background: var(--pink);
-    transition: all 0.2s;
+    transition: var(--transition-fast);
 }
 
 .btn--pink::after {
@@ -312,7 +340,7 @@ body:not(.user-is-tabbing) a:focus {
     border-radius: 50%;
     z-index: 10;
     visibility: hidden;
-    transition: all .4s;
+    transition: var(--transition-slow);
 }
 
 .back-to-top__image {
@@ -344,10 +372,26 @@ body:not(.user-is-tabbing) a:focus {
 .nav__items {
     display: flex;
     list-style: none;
+    /* 
+        If nav items overflow on medium screens,
+        we wrap them to the next line 
+    */
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .nav__item:not(:last-child) {
     margin-right: var(--gutter-medium);
+}
+
+@media(max-width: 700px) {
+    .nav {
+        justify-content: center;
+    }
+
+    .nav__item:not(:last-child) {
+        margin-right: var(--gutter-small);
+    }
 }
 
 @media(max-width: 500px) {
@@ -374,7 +418,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 0;
     text-decoration: none;
     color: inherit;
-    transition: all .2s;
+    transition: var(--transition-fast);
 }
 
 .nav__link::after {
@@ -404,7 +448,7 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)),
         url('./images/header.jpg');
     height: 100vh;
     background-size: cover;
@@ -426,6 +470,39 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-medium);
 }
 
+/* 
+    NEW: Header role text styling
+    This styles the "IT Student | Aspiring Developer" line
+*/
+.header__role {
+    font-size: var(--font-size-medium) !important;
+    color: var(--pink) !important;
+    margin-bottom: 1rem !important;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 0.2rem;
+}
+
+/* 
+    NEW: Header description styling
+    The smaller description below the role
+*/
+.header__description {
+    font-size: var(--font-size-small) !important;
+    color: var(--white-1) !important;
+    margin-bottom: 3rem !important;
+    max-width: var(--container-medium-width);
+}
+
+/* 
+    NEW: Header buttons container
+    Arranges the two buttons side by side
+*/
+.header__buttons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
 @media(max-width: 500px) {
     .header {
         text-align: center;
@@ -434,10 +511,190 @@ body:not(.user-is-tabbing) a:focus {
     .header__text p {
         transform: scale(.8);
     }
+
+    .header__buttons {
+        justify-content: center;
+    }
 }
 
 /* --------------------------------------- */
-/* ----- Work ----- */
+/* ----- About ----- */
+/* --------------------------------------- */
+
+.about__content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+@media(max-width: 900px) {
+    .about__content {
+        flex-direction: column-reverse;
+        align-items: initial;
+    }
+}
+
+.about__photo-container {
+    margin-bottom: var(--gutter-normal);
+}
+
+@media(min-width: 901px) {
+    .about__text {
+        flex: 0 0 35%;
+    }
+
+    .about__photo-container {
+        flex: 1;
+        margin: 0 var(--gutter-huge) 0 0;
+    }
+}
+
+/* 
+    NEW: About photo styling
+    Makes the photo look more professional
+    with a pink border accent
+*/
+.about__photo {
+    border-radius: 4px;
+    /* 
+        Adds a subtle pink glow around your photo
+        Change the color values if you prefer different 
+    */
+    box-shadow: 0 0 0 3px var(--pink),
+                0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-normal);
+}
+
+.about__photo:hover {
+    box-shadow: 0 0 0 3px var(--pink),
+                0 20px 60px rgba(255, 50, 88, 0.2);
+    transform: scale(1.02);
+}
+
+/* 
+    NEW: About facts list styling
+    This styles the quick facts bullet points
+    (Location, University, Year etc.)
+*/
+.about__facts {
+    list-style: none;
+    margin: var(--gutter-normal) 0;
+    padding: 0;
+}
+
+.about__facts li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--card-border);
+    font-size: var(--font-size-small);
+    /* 
+        Adds a smooth transition when hovering on each fact 
+    */
+    transition: var(--transition-fast);
+}
+
+.about__facts li:hover {
+    padding-left: 1rem;
+    color: var(--white);
+}
+
+/* --------------------------------------- */
+/* ----- Skills Section (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW SECTION: Skills
+    This is a completely new section not in the original CSS
+    It shows your technical and soft skills as tags/badges
+*/
+
+.skills__content {
+    display: grid;
+    /* 
+        Creates a 2-column grid for skill categories
+        On smaller screens it becomes 1 column
+    */
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter-normal);
+}
+
+@media(max-width: 700px) {
+    .skills__content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 
+    Each skill category card (Programming Languages, 
+    Web Development, Tools etc.)
+*/
+.skills__category {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: var(--gutter-normal);
+    /* 
+        Smooth hover effect on cards
+    */
+    transition: var(--transition-normal);
+}
+
+.skills__category:hover {
+    border-color: var(--tag-border);
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-3px);
+}
+
+.skills__category h3 {
+    font-size: var(--font-size-normal);
+    color: var(--pink);
+    margin-bottom: var(--gutter-small);
+    /* 
+        Adds a small line under each category title
+    */
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* 
+    Container for all skill tags inside a category 
+*/
+.skills__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* 
+    Individual skill tag/badge
+    Example: "HTML", "CSS", "Java" etc.
+*/
+.skills__tag {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: 50px;
+    font-size: 1.4rem;
+    color: var(--white-1);
+    /* 
+        Smooth hover animation on each tag 
+    */
+    transition: var(--transition-fast);
+    cursor: default;
+}
+
+.skills__tag:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: var(--white);
+    /* 
+        Slight lift effect on hover 
+    */
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------- */
+/* ----- Work / Projects ----- */
 /* --------------------------------------- */
 
 .work__box {
@@ -472,24 +729,64 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__list {
-    /* list-style-type: square; */
     list-style-position: inside;
     margin-bottom: var(--gutter-normal);
+}
+
+/* 
+    NEW: Style for each item in the tech stack list
+    Adds a small pink dot before each technology name
+*/
+.work__list li {
+    padding: 0.3rem 0;
+    position: relative;
+}
+
+.work__list li::before {
+    content: '▹';
+    color: var(--pink);
+    margin-right: 0.8rem;
 }
 
 .work__code {
     display: block;
     height: 3rem;
     margin-left: var(--gutter-normal);
-    transition: all .3s;
+    transition: var(--transition-normal);
 }
 
 .work__code:hover {
     transform: scale(1.2);
+    /* 
+        Adds a pink tint to GitHub icon on hover
+        using CSS filter 
+    */
+    filter: invert(30%) sepia(100%) saturate(500%) 
+            hue-rotate(300deg) brightness(100%);
 }
 
 .work__image-box {
     margin-bottom: var(--gutter-normal);
+    /* 
+        NEW: Adds a subtle border and shadow to project images
+    */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 
+    NEW: Project image hover effect
+    Image slightly zooms in when you hover on it
+*/
+.work__image {
+    transition: var(--transition-normal);
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-card);
+}
+
+.work__image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow-hover);
 }
 
 @media(min-width: 901px) {
@@ -506,8 +803,265 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* ----- Education Section (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW SECTION: Education
+    Displays your academic background
+    Uses a timeline-style layout
+*/
+
+.education__content {
+    /* 
+        Creates a vertical timeline layout
+        Each education item appears below the previous one
+    */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-normal);
+    /* 
+        Left border acts as the timeline line 
+    */
+    border-left: 2px solid var(--pink);
+    padding-left: var(--gutter-normal);
+    margin-left: 2rem;
+}
+
+/* 
+    Each individual education entry
+    (e.g., BSc degree, HSC, SSC)
+*/
+.education__item {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: var(--gutter-normal);
+    transition: var(--transition-normal);
+}
+
+/* 
+    The dot on the timeline line
+    This appears as a pink circle on the left border
+*/
+.education__item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--gutter-normal) - 1.1rem);
+    top: 3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--pink);
+    border-radius: 50%;
+    border: 3px solid var(--black);
+}
+
+.education__item:hover {
+    border-color: var(--tag-border);
+    box-shadow: var(--box-shadow-hover);
+    transform: translateX(5px);
+}
+
+/* 
+    Year text (e.g., "2023 - Present")
+*/
+.education__year {
+    font-size: 1.4rem;
+    color: var(--pink);
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+/* 
+    Degree/Certificate title inside each item
+*/
+.education__item h3 {
+    font-size: var(--font-size-normal);
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+/* 
+    University/School name
+*/
+.education__university {
+    color: var(--white-1);
+    font-size: var(--font-size-small);
+    margin: 0.5rem 0 !important;
+}
+
+/* 
+    GPA/Grade text
+*/
+.education__grade {
+    color: var(--pink);
+    font-size: 1.5rem;
+    margin: 0.5rem 0 !important;
+    font-weight: bold;
+}
+
+/* 
+    Relevant courses list
+*/
+.education__courses {
+    font-size: 1.5rem;
+    color: var(--white-1);
+    margin-top: 1rem !important;
+    line-height: 1.8;
+}
+
+@media(max-width: 600px) {
+    .education__content {
+        margin-left: 0.5rem;
+        padding-left: var(--gutter-small);
+    }
+}
+
+/* --------------------------------------- */
+/* ----- Certifications Section (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW SECTION: Certifications
+    Shows your certificates in a grid of cards
+*/
+
+.certifications__content {
+    display: grid;
+    /* 
+        3 columns on large screens
+        2 columns on medium screens
+        1 column on small screens
+    */
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter-normal);
+}
+
+@media(max-width: 900px) {
+    .certifications__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px) {
+    .certifications__content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 
+    Individual certification card 
+*/
+.certification__item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: var(--gutter-small);
+    /* 
+        Top border accent in pink
+        Like a colored stripe at top of each card
+    */
+    border-top: 3px solid var(--pink);
+    transition: var(--transition-normal);
+}
+
+.certification__item:hover {
+    border-color: var(--pink);
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* 
+    Certificate name/title
+*/
+.certification__item h3 {
+    font-size: var(--font-size-small);
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    /* Prevents very long cert names from breaking layout */
+    overflow-wrap: break-word;
+}
+
+/* 
+    Issuer and date text
+*/
+.certification__item p {
+    font-size: 1.4rem;
+    color: var(--white-1);
+    margin: 0.5rem 0 !important;
+}
+
+/* 
+    "Verify Certificate" link
+*/
+.certification__item .link__text {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+/* --------------------------------------- */
+/* ----- Achievements Section (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW SECTION: Achievements & Activities
+    Shows your accomplishments and extracurriculars
+*/
+
+.achievements__content {
+    max-width: var(--container-normal-width);
+}
+
+/* 
+    The achievements list container
+*/
+.achievements__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 
+    Each achievement item
+    Gets a card-like treatment with hover effect
+*/
+.achievements__list li {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 2rem var(--gutter-normal);
+    font-size: var(--font-size-small);
+    color: var(--white-1);
+    /* 
+        Left pink border accent
+        Like a colored sidebar on each achievement
+    */
+    border-left: 3px solid var(--pink);
+    transition: var(--transition-normal);
+    line-height: var(--line-height-normal);
+}
+
+.achievements__list li:hover {
+    background: rgba(255, 50, 88, 0.05);
+    border-left-width: 6px;
+    transform: translateX(5px);
+    color: var(--white);
+}
+
+/* --------------------------------------- */
 /* ----- Clients ----- */
 /* --------------------------------------- */
+
+/* 
+    NOTE: If you are a student and have no clients yet,
+    you can REMOVE this section from your HTML
+    and delete/ignore these styles
+*/
 
 .client__logos {
     display: flex;
@@ -518,6 +1072,12 @@ body:not(.user-is-tabbing) a:focus {
 .client__logo {
     height: 6.5rem;
     max-width: 18rem;
+    transition: var(--transition-normal);
+}
+
+.client__logo:hover {
+    opacity: 1;
+    filter: none;
 }
 
 @media(max-width: 1240px) {
@@ -532,43 +1092,23 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- About ----- */
-/* --------------------------------------- */
-
-.about__content {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-@media(max-width: 900px) {
-    .about__content {
-        flex-direction: column-reverse;
-        align-items: initial;
-    }
-}
-
-.about__photo-container {
-    margin-bottom: var(--gutter-normal);
-}
-
-@media(min-width: 901px) {
-    .about__text {
-        flex: 0 0 35%;
-    }
-    
-    .about__photo-container {
-        flex: 1;
-        margin: 0 var(--gutter-huge) 0 0;
-    }
-}
-
-/* --------------------------------------- */
 /* ----- Contact ----- */
 /* --------------------------------------- */
 
 .contact__info {
     max-width: var(--container-medium-width);
+}
+
+/* 
+    NEW: Contact section email button wrapper
+    Adds some spacing around the contact button
+*/
+.contact__info .btn {
+    margin-top: var(--gutter-small);
+    /* 
+        Breaks long email addresses on small screens
+    */
+    word-break: break-all;
 }
 
 /* --------------------------------------- */
@@ -585,6 +1125,11 @@ body:not(.user-is-tabbing) a:focus {
     justify-content: center;
     padding: var(--gutter-normal) 0;
     list-style: none;
+    /* 
+        Wraps icons to next line on very small screens
+    */
+    flex-wrap: wrap;
+    gap: var(--gutter-small);
 }
 
 .footer__social-link-item:not(:last-of-type) {
@@ -593,6 +1138,37 @@ body:not(.user-is-tabbing) a:focus {
 
 .footer__social-image {
     height: 4rem;
+    transition: var(--transition-normal);
+    /* 
+        Makes icons white colored
+        since they might be dark SVGs 
+    */
+    filter: invert(80%);
+}
+
+/* 
+    NEW: Social icon hover effects
+    Each social icon gets a different color on hover
+*/
+
+/* GitHub - white */
+.footer__social-link-item:nth-child(1) .footer__social-image:hover {
+    filter: invert(100%);
+    transform: scale(1.2) translateY(-3px);
+}
+
+/* LinkedIn - blue */
+.footer__social-link-item:nth-child(2) .footer__social-image:hover {
+    filter: invert(40%) sepia(100%) saturate(500%) 
+            hue-rotate(180deg) brightness(100%);
+    transform: scale(1.2) translateY(-3px);
+}
+
+/* Twitter - light blue */
+.footer__social-link-item:nth-child(3) .footer__social-image:hover {
+    filter: invert(60%) sepia(100%) saturate(300%) 
+            hue-rotate(170deg) brightness(110%);
+    transform: scale(1.2) translateY(-3px);
 }
 
 .footer__github-buttons {
@@ -609,5 +1185,105 @@ body:not(.user-is-tabbing) a:focus {
 @media(max-width: 500px) {
     .footer {
         padding: var(--gutter-medium) 0;
-    } 
+    }
+
+    .footer__social-links {
+        gap: var(--gutter-normal);
+    }
+}
+
+/* --------------------------------------- */
+/* ----- Scroll Animations (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW: Fade-in animation for sections
+    Sections fade in as you scroll down the page
+    
+    To use this, add class="fade-in" to any element
+    in your HTML that you want to animate
+    
+    The JavaScript will add class="visible" when
+    the element enters the viewport
+    
+    You'll need to add this JS to your index.js:
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+    
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+*/
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 
+    Stagger effect for items inside a container
+    Each child animates slightly after the previous one
+*/
+.fade-in:nth-child(1) { transition-delay: 0.1s; }
+.fade-in:nth-child(2) { transition-delay: 0.2s; }
+.fade-in:nth-child(3) { transition-delay: 0.3s; }
+.fade-in:nth-child(4) { transition-delay: 0.4s; }
+.fade-in:nth-child(5) { transition-delay: 0.5s; }
+
+/* --------------------------------------- */
+/* ----- Custom Scrollbar (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW: Custom scrollbar styling
+    Makes the browser scrollbar match your pink theme
+    Only works in Chrome/Edge browsers
+*/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pink);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff1a3d;
+}
+
+/* --------------------------------------- */
+/* ----- Selection Color (NEW) ----- */
+/* --------------------------------------- */
+
+/* 
+    NEW: When user selects/highlights text,
+    it shows in pink color instead of default blue
+*/
+
+::selection {
+    background: var(--pink);
+    color: var(--white);
+}
+
+::-moz-selection {
+    background: var(--pink);
+    color: var(--white);
 }
