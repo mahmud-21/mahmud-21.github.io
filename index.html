@@ -1,19 +1,3 @@
-<!-- 
-  Hello 😊.
-
-  This template is designed and developed by Nisar Hassan Naqvi
-  for anyone to use for free or customize the way they like.
-
-  Github Repo: https://github.com/nisarhassan12/portfolio-template/
-  My Website: https://nisar.dev
-
-  For business & inquires, contact me => syednisarhassan12@gmail.com
--->
-
-<!--
-  Follow the instructions written in comments to create your stunning portfolio
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,254 +6,890 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
 
-  <!-- Put your site title here -->
-  <title>
-  Md Mahmudur Rahman |Dedicated learner,Creative thinker| 
-   
-  </title>
+  <!--
+    =====================================================
+    STEP 1: UPDATE YOUR PAGE TITLE
+    Replace "Md Mahmudur Rahman" with your name
+    The title shows in browser tab
+    =====================================================
+  -->
+  <title>Md Mahmudur Rahman | IT Student | MBSTU</title>
 
-  <meta name="description" content="Add small description of yourslef.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
+  <!--
+    =====================================================
+    STEP 2: UPDATE META DESCRIPTION
+    Write 1-2 sentences about yourself
+    This helps in Google Search results
+    Example: "IT Student at MBSTU passionate about..."
+    =====================================================
+  -->
+  <meta name="description" content="Md Mahmudur Rahman - IT Student at 
+  Mawlana Bhashani Science and Technology University. Passionate about 
+  programming, web development and problem solving.">
+
+  <!--
+    =====================================================
+    STEP 3: UPDATE META KEYWORDS
+    Add your skills and technologies you know
+    =====================================================
+  -->
+  <meta name="keywords" content="Md Mahmudur Rahman, IT Student, MBSTU, 
+  Web Developer, C++, Java, HTML, CSS, Bangladesh" />
+
   <link rel="stylesheet" href="index.css" />
+
+  <!--
+    =====================================================
+    STEP 4: GOOGLE FONTS (Already included in template)
+    You can change the font if you want
+    Visit: https://fonts.google.com
+    =====================================================
+  -->
 </head>
 
 <body>
 
-  <!-- ***** Header ***** -->
+  <!-- 
+    =====================================================
+    NAVIGATION BAR
+    These are the menu links at the top
+    Each href="#something" links to a section below
+    You can add or remove menu items
+    =====================================================
+  -->
 
   <header class="header" role="banner" id="top">
     <div class="row">
       <nav class="nav" role="navigation">
         <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <li class="nav__item"><a href="#clients" class="nav__link">Clients</a></li>
+
+          <!-- Keep these nav links matching your section IDs below -->
           <li class="nav__item">
             <a href="#about" class="nav__link">About</a>
           </li>
           <li class="nav__item">
+            <a href="#skills" class="nav__link">Skills</a>
+          </li>
+          <li class="nav__item">
+            <a href="#work" class="nav__link">Projects</a>
+          </li>
+          <li class="nav__item">
+            <a href="#education" class="nav__link">Education</a>
+          </li>
+          <li class="nav__item">
+            <a href="#certifications" class="nav__link">Certifications</a>
+          </li>
+          <li class="nav__item">
             <a href="#contact" class="nav__link">Contact</a>
           </li>
+
         </ul>
       </nav>
     </div>
+
+    <!-- 
+      =====================================================
+      HERO SECTION (The big introduction at the top)
+      =====================================================
+    -->
     <div class="header__text-box row">
       <div class="header__text">
+
         <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
+          <!--
+            YOUR FULL NAME HERE
+            Make it professional - use your full name
+          -->
           <span>Md Mahmudur Rahman</span>
         </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>Dedicated learner | Creative Thinker </p>
-        <p>I am currently pursuing a Bachelor's degree in Information and Communication Technology at Mawlana Bhashani Science and Technology University (MBSTU). </p>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
+
+        <!--
+          YOUR ROLE/TITLE
+          As a student you can write:
+          - "IT Student & Aspiring Developer"
+          - "Future Software Engineer"
+          - "Web Developer in Training"
+          Pick what represents you best
+        -->
+        <p class="header__role">
+          IT Student | Aspiring Software Developer | Problem Solver
+        </p>
+
+        <!--
+          SHORT INTRODUCTION (1-2 sentences max)
+          Keep it simple and impactful
+          Tell visitors WHO you are and WHAT you want to do
+        -->
+        <p class="header__description">
+          2nd Year IT Student at MBSTU 🎓 | Passionate about building 
+          things with code | Currently learning Web Development & 
+          Data Structures
+        </p>
+
+        <!--
+          CALL TO ACTION BUTTONS
+          You should have 2 buttons:
+          1. Contact button
+          2. Resume/CV Download button
+        -->
+        <div class="header__buttons">
+          <a href="#contact" class="btn btn--pink">Get in touch</a>
+
+          <!--
+            =====================================================
+            STEP 5: ADD YOUR RESUME
+            Upload your CV to Google Drive
+            Make it publicly accessible
+            Replace the href with your Google Drive link
+            OR use a PDF file in your project folder
+            Example: href="./files/my-resume.pdf"
+            =====================================================
+          -->
+          <a href="./files/resume.pdf" 
+             class="btn" 
+             target="_blank"
+             download>
+            Download CV
+          </a>
+        </div>
+
       </div>
     </div>
   </header>
 
   <main role="main">
 
-    <!-- ***** Work ***** -->
-
-    <section class="work" id="work">
-      <div class="row">
-        <h2>My Work</h2>
-        <div class="work__boxes">
-
-          <!-- Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Portfolio Template</h3>
-              <ul class="work__list">
-                <li>C</li>
-                <li>C++</li>
-                <li>Java</li>
-                <li>HTML</li>
-                <li>CSS</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/nisarhassan12/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Calculator</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
-              </p>
-              <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-2.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Notificator</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
-              </p>
-              <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/project-3.png" class="work__image" alt="Project 3" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** Clients ***** -->
-
-    <section class="client" id="clients">
-      <div class="row">
-        <h2>Clients</h2>
-        <div class="client__logos">
-          <!-- Add logos of the clients or companies you'have worked with. -->
-          <img src="./images/ronjones.png" class="client__logo" alt="Company 2" />
-          <img src="./images/goldengrid.png" class="client__logo" alt="Company 3" />
-          <img src="./images/bullseye.png" class="client__logo" alt="Company 1" />
-          <img src="./images/mighty-furnitures.png" class="client__logo" alt="Company 1" />
-          <img src="./images/fastlane.png" class="client__logo" alt="Company 3" />
-          <img src="./images/chippy.png" class="client__logo" alt="Company 1" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ***** About ***** -->
-
+    <!-- 
+      =====================================================
+      ABOUT SECTION
+      Tell people who you are
+      This is one of the MOST IMPORTANT sections
+      =====================================================
+    -->
     <section class="about" id="about">
       <div class="row">
         <h2>About Me</h2>
         <div class="about__content">
+
           <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
+            <!--
+              WRITE YOUR STORY HERE
+              Answer these questions in your paragraph:
+              1. Who are you?
+              2. What are you studying?
+              3. What are you passionate about?
+              4. What are your goals?
+              5. What makes you different?
+
+              EXAMPLE (Replace with your own words):
+              "I am a 2nd year Information and Communication Technology
+              student at MBSTU. I am passionate about..."
+              
+              DO NOT use Lorem ipsum - write REAL content about yourself!
+            -->
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id
-              nostrum illo harum blanditiis, tenetur eum suscipit cupiditate
-              in vel, ex quam quidem quos mollitia labore aut sunt eius
-              ratione molestiae fuga veniam facere similique voluptate.
+              Hello! I am Md Mahmudur Rahman, a passionate 2nd year 
+              student studying Information and Communication Technology 
+              at Mawlana Bhashani Science and Technology University 
+              (MBSTU), Bangladesh.
             </p>
-            <!-- Provide a link to your resume -->
-            <a href="#" class="btn">My Resume</a>
+
+            <p>
+              <!--
+                ADD YOUR PASSION AND INTERESTS HERE
+                What do you love about IT?
+                What specific field interests you most?
+                (Web Dev, AI, Cybersecurity, Mobile Apps etc.)
+              -->
+              I am deeply passionate about [YOUR INTEREST - e.g., "web 
+              development and solving real-world problems through code"]. 
+              I enjoy [WHAT YOU ENJOY - e.g., "learning new technologies 
+              and building projects that make a difference"].
+            </p>
+
+            <p>
+              <!--
+                ADD YOUR GOALS HERE
+                Where do you see yourself in the future?
+                What kind of job/career do you want?
+              -->
+              My goal is to [YOUR GOAL - e.g., "become a full-stack 
+              developer and contribute to meaningful tech solutions 
+              in Bangladesh and beyond"].
+            </p>
+
+            <!--
+              QUICK FACTS ABOUT YOU
+              These make your profile more personal
+              Fill in with your actual information
+            -->
+            <ul class="about__facts">
+              <li>📍 Location: [Your City], Bangladesh</li>
+              <li>🎓 University: MBSTU, Tangail</li>
+              <li>📚 Year: 2nd Year, 2nd Semester</li>
+              <li>💻 Department: Information & Communication Technology</li>
+              <li>🎯 Interest: [Your Interest - Web Dev / AI / etc.]</li>
+              <li>📖 Currently Learning: [What you're learning now]</li>
+            </ul>
+
+            <a href="./files/resume.pdf" class="btn" target="_blank">
+              My Resume
+            </a>
           </div>
 
           <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/syed-ali-hussnain.jpg" alt="" />
+            <!--
+              =====================================================
+              STEP 6: ADD YOUR PHOTO
+              - Take a professional/semi-professional photo
+              - Good lighting, plain background preferred
+              - Smile! 😊
+              - Save it in ./images/ folder
+              - Replace "your-photo.jpg" with your filename
+              
+              TIP: Use a square photo for best results
+              =====================================================
+            -->
+            <img 
+              class="about__photo" 
+              src="./images/your-photo.jpg" 
+              alt="Md Mahmudur Rahman - IT Student at MBSTU" 
+            />
           </div>
+
         </div>
       </div>
     </section>
+
+    <!-- 
+      =====================================================
+      SKILLS SECTION ⭐ (Very Important for IT Students!)
+      Show what technologies and tools you know
+      Be HONEST - only list what you actually know
+      =====================================================
+    -->
+    <section class="skills" id="skills">
+      <div class="row">
+        <h2>My Skills</h2>
+
+        <div class="skills__content">
+
+          <!-- PROGRAMMING LANGUAGES -->
+          <div class="skills__category">
+            <h3>Programming Languages</h3>
+            <!--
+              LIST ONLY LANGUAGES YOU HAVE ACTUALLY USED
+              Remove any you don't know
+              Add any missing ones
+              
+              Common IT student skills:
+              C, C++, Java, Python, JavaScript, PHP
+            -->
+            <div class="skills__tags">
+              <span class="skills__tag">C</span>
+              <span class="skills__tag">C++</span>
+              <span class="skills__tag">Java</span>
+              <!-- Add Python if you know it -->
+              <!-- <span class="skills__tag">Python</span> -->
+              <!-- Add JavaScript if you know it -->
+              <!-- <span class="skills__tag">JavaScript</span> -->
+            </div>
+          </div>
+
+          <!-- WEB DEVELOPMENT -->
+          <div class="skills__category">
+            <h3>Web Development</h3>
+            <!--
+              Add/remove based on what you know:
+              HTML, CSS, JavaScript, Bootstrap, React etc.
+            -->
+            <div class="skills__tags">
+              <span class="skills__tag">HTML5</span>
+              <span class="skills__tag">CSS3</span>
+              <!-- Add these if you know them -->
+              <!-- <span class="skills__tag">JavaScript</span> -->
+              <!-- <span class="skills__tag">Bootstrap</span> -->
+              <!-- <span class="skills__tag">React</span> -->
+            </div>
+          </div>
+
+          <!-- DATABASE -->
+          <div class="skills__category">
+            <h3>Database</h3>
+            <!--
+              Common databases in IT curriculum:
+              MySQL, Oracle, MongoDB, SQLite
+              Only add what you've actually used
+            -->
+            <div class="skills__tags">
+              <!-- <span class="skills__tag">MySQL</span> -->
+              <!-- <span class="skills__tag">Oracle</span> -->
+              <!-- Add what you know -->
+              <span class="skills__tag">
+                [Add databases you know]
+              </span>
+            </div>
+          </div>
+
+          <!-- TOOLS & SOFTWARE -->
+          <div class="skills__category">
+            <h3>Tools & Software</h3>
+            <!--
+              Tools you use for development:
+              VS Code, Git, GitHub, Eclipse, IntelliJ,
+              Figma, Adobe XD, Linux, etc.
+            -->
+            <div class="skills__tags">
+              <span class="skills__tag">VS Code</span>
+              <span class="skills__tag">Git</span>
+              <span class="skills__tag">GitHub</span>
+              <!-- <span class="skills__tag">Linux</span> -->
+              <!-- Add others you use -->
+            </div>
+          </div>
+
+          <!-- SOFT SKILLS -->
+          <div class="skills__category">
+            <h3>Soft Skills</h3>
+            <!--
+              Don't forget soft skills!
+              They matter a lot to employers
+            -->
+            <div class="skills__tags">
+              <span class="skills__tag">Problem Solving</span>
+              <span class="skills__tag">Teamwork</span>
+              <span class="skills__tag">Communication</span>
+              <span class="skills__tag">Critical Thinking</span>
+              <!-- Add your strong soft skills -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      =====================================================
+      PROJECTS SECTION ⭐⭐ (MOST Important Section!)
+      
+      As an IT student, projects are your PROOF OF SKILLS
+      
+      If you don't have many projects yet, that's okay!
+      Start building small projects now:
+      
+      PROJECT IDEAS FOR IT STUDENTS:
+      ================================
+      BEGINNER:
+      - Calculator (HTML/CSS/JS)
+      - To-Do List App
+      - Simple Quiz App
+      - Student Grade Calculator (C/C++)
+      - Library Management System (C++)
+      
+      INTERMEDIATE:
+      - Personal Portfolio Website (this!)
+      - Weather App (using API)
+      - Simple Blog Website
+      - Student Result System (with Database)
+      - E-commerce UI Design
+      
+      ADVANCED (Future goals):
+      - Full Stack Web Application
+      - Android App
+      - Machine Learning Project
+      
+      FOR EACH PROJECT INCLUDE:
+      - Project Name
+      - What it does (description)
+      - Technologies used
+      - Live Demo link (use Netlify/Vercel for free)
+      - GitHub link (very important!)
+      - Screenshot
+      =====================================================
+    -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Projects</h2>
+        <div class="work__boxes">
+
+          <!-- 
+            PROJECT 1
+            Replace ALL the placeholder content below
+          -->
+          <div class="work__box">
+            <div class="work__text">
+
+              <!--
+                PROJECT NAME
+                Give a clear, professional name
+                Example: "Student Management System"
+                NOT just "Project 1"
+              -->
+              <h3>Project Name Here</h3>
+
+              <!--
+                PROJECT DESCRIPTION
+                2-3 sentences explaining:
+                1. What does it do?
+                2. Who is it for?
+                3. What problem does it solve?
+                
+                EXAMPLE:
+                "A web-based student management system that allows
+                teachers to track student attendance and grades.
+                Built as part of my Database Management coursework."
+              -->
+              <p>
+                [Describe your project here. What does it do? 
+                What problem does it solve? Who would use it?]
+              </p>
+
+              <!--
+                TECHNOLOGIES USED
+                List the actual languages/frameworks used
+              -->
+              <ul class="work__list">
+                <li>[Technology 1 - e.g., HTML]</li>
+                <li>[Technology 2 - e.g., CSS]</li>
+                <li>[Technology 3 - e.g., JavaScript]</li>
+                <li>[Technology 4 - e.g., MySQL]</li>
+              </ul>
+
+              <div class="work__links">
+                <!--
+                  LIVE DEMO LINK
+                  Deploy your project for FREE using:
+                  - Netlify (netlify.com) - for HTML/CSS/JS
+                  - Vercel (vercel.com) - for React etc.
+                  - GitHub Pages - for static sites
+                  
+                  Replace href with your live site URL
+                  If no live demo, you can remove this link
+                -->
+                <a href="YOUR-LIVE-SITE-URL" 
+                   target="_blank" 
+                   class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+
+                <!--
+                  GITHUB LINK ⭐ Very Important!
+                  - Create a GitHub account if you don't have one
+                  - Upload ALL your projects to GitHub
+                  - It shows recruiters your actual code
+                  
+                  Replace href with your GitHub repo link
+                -->
+                <a href="YOUR-GITHUB-REPO-LINK" 
+                   title="View Source Code" 
+                   target="_blank">
+                  <img src="./images/github.svg" 
+                       class="work__code" 
+                       alt="View on GitHub">
+                </a>
+              </div>
+            </div>
+
+            <div class="work__image-box">
+              <!--
+                PROJECT SCREENSHOT
+                Take a screenshot of your project
+                Save in ./images/ folder
+                Recommended size: 1200x800px
+                
+                Tools to take good screenshots:
+                - Windows Snipping Tool
+                - Browser full page screenshot
+                
+                If no screenshot yet, use a placeholder
+              -->
+              <img src="./images/project-1.png" 
+                   class="work__image" 
+                   alt="[Project Name] Screenshot" />
+            </div>
+          </div>
+
+          <!-- 
+            PROJECT 2
+            Copy the above work__box div and paste it here
+            Then update with your second project details
+            
+            REMOVE this comment and the placeholder if you
+            don't have a second project yet - it's okay!
+            Better to show 1 real project than 3 fake ones
+          -->
+
+          <!-- 
+            PROJECT 3
+            Same as above - only add if you have real projects
+          -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      =====================================================
+      EDUCATION SECTION ⭐ (Important for Students!)
+      
+      As a student with limited work experience,
+      your education is very important to show
+      =====================================================
+    -->
+    <section class="education" id="education">
+      <div class="row">
+        <h2>Education</h2>
+
+        <div class="education__content">
+
+          <!-- CURRENT DEGREE -->
+          <div class="education__item">
+            <div class="education__year">2023 - Present</div>
+            <!--
+              UPDATE WITH YOUR ACTUAL ENROLLMENT YEAR
+              Replace 2023 with the year you started
+            -->
+            <div class="education__details">
+              <h3>Bachelor of Science in Information and 
+                  Communication Technology (ICT)
+              </h3>
+              <p class="education__university">
+                Mawlana Bhashani Science and Technology University 
+                (MBSTU), Tangail, Bangladesh
+              </p>
+              <!--
+                ADD YOUR CGPA IF IT'S GOOD (3.0+)
+                If not, you can skip the CGPA line
+              -->
+              <p class="education__grade">
+                CGPA: [Your CGPA] / 4.00
+              </p>
+              <!--
+                ADD RELEVANT COURSES YOU'VE TAKEN
+                Pick the ones most relevant to tech
+              -->
+              <p class="education__courses">
+                <strong>Relevant Courses:</strong> 
+                [List courses like: Data Structures, Algorithms, 
+                Database Management, OOP, Web Technology, 
+                Computer Networks, etc.]
+              </p>
+            </div>
+          </div>
+
+          <!-- HIGHER SECONDARY / HSC -->
+          <div class="education__item">
+            <div class="education__year">
+              <!--
+                ADD YOUR HSC YEAR
+                Format: "Year of Passing"
+              -->
+              [HSC Pass Year]
+            </div>
+            <div class="education__details">
+              <h3>Higher Secondary Certificate (HSC)</h3>
+              <p class="education__university">
+                <!--
+                  ADD YOUR COLLEGE NAME AND BOARD
+                -->
+                [Your College Name], [Board Name] Board
+              </p>
+              <p class="education__grade">
+                <!--
+                  ADD YOUR GPA
+                  Only include if 4.0+ or impressive
+                -->
+                GPA: [Your GPA] / 5.00
+              </p>
+              <p>Science / [Your Group]</p>
+            </div>
+          </div>
+
+          <!-- SSC - You can add this too -->
+          <div class="education__item">
+            <div class="education__year">
+              [SSC Pass Year]
+            </div>
+            <div class="education__details">
+              <h3>Secondary School Certificate (SSC)</h3>
+              <p class="education__university">
+                [Your School Name], [Board Name] Board
+              </p>
+              <p class="education__grade">
+                GPA: [Your GPA] / 5.00
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      =====================================================
+      CERTIFICATIONS SECTION
+      
+      As a student, online certifications show initiative!
+      
+      FREE CERTIFICATIONS YOU CAN GET:
+      ===================================
+      1. Google Digital Marketing (google.com/certificates)
+      2. freeCodeCamp (freecodecamp.org) - Web Dev
+      3. Coursera (with financial aid) - Many options
+      4. Cisco NetAcad - Networking basics
+      5. HackerRank - Programming certificates
+      6. LinkedIn Learning - Various tech courses
+      7. edX - Computer Science courses
+      8. Bangladesh ICT Division courses
+      
+      Start getting certifications NOW!
+      Even 1-2 certifications look great on portfolio
+      =====================================================
+    -->
+    <section class="certifications" id="certifications">
+      <div class="row">
+        <h2>Certifications</h2>
+
+        <div class="certifications__content">
+          <!--
+            FOR EACH CERTIFICATION ADD:
+            - Certificate Name
+            - Issuing Organization
+            - Date Received
+            - Verification Link (if available)
+            
+            If you don't have any yet, REMOVE this section
+            and add it once you earn some certificates
+            
+            EXAMPLE FORMAT:
+          -->
+          <div class="certification__item">
+            <h3>[Certificate Name]</h3>
+            <p>[Issuing Organization] | [Month, Year]</p>
+            <a href="[Verification Link]" 
+               target="_blank" 
+               class="link__text">
+              Verify Certificate <span>&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Add more certifications as you earn them -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      =====================================================
+      ACHIEVEMENTS / EXTRACURRICULAR SECTION
+      
+      Add things like:
+      - Participated in programming contests
+      - Hackathon participation
+      - Club memberships (Computer Club, etc.)
+      - Volunteer work
+      - Academic awards
+      - Leadership roles
+      =====================================================
+    -->
+    <section class="achievements" id="achievements">
+      <div class="row">
+        <h2>Achievements & Activities</h2>
+
+        <div class="achievements__content">
+          <!--
+            ADD YOUR ACHIEVEMENTS HERE
+            Be specific! Include dates and organizations
+            
+            Examples:
+            - "Participated in ICPC Programming Contest 2024"
+            - "Member of MBSTU Computer Science Club"
+            - "Volunteer at [Event Name]"
+            - "Dean's List / Academic Excellence Award"
+          -->
+          <ul class="achievements__list">
+            <li>
+              🏆 [Achievement 1 - e.g., "Participated in 
+              National Programming Contest 2024"]
+            </li>
+            <li>
+              💻 [Achievement 2 - e.g., "Active member of 
+              MBSTU Computer Club"]
+            </li>
+            <li>
+              🎓 [Achievement 3 - e.g., "Maintained CGPA 
+              above 3.5 in all semesters"]
+            </li>
+            <li>
+              🌟 [Achievement 4 - add more as you accomplish them]
+            </li>
+          </ul>
+          <!--
+            If you don't have achievements yet, you can:
+            1. Remove this section for now
+            2. OR join clubs and activities at your university
+               then add them here
+               
+            TIP: Join your university's Computer Club / 
+            IT Club if you haven't already!
+          -->
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ***** Contact ***** -->
-
+  <!-- 
+    =====================================================
+    CONTACT SECTION
+    Make it easy for people to reach you!
+    =====================================================
+  -->
   <section class="contact" id="contact">
     <div class="row">
       <h2>Get in Touch</h2>
       <div class="contact__info">
+
+        <!--
+          CONTACT MESSAGE
+          Keep it friendly and inviting
+          Tell people WHY they should contact you
+        -->
         <p>
-          Are you looking for a fast-performing and user-friendly website to
-          represent your product or business? or looking for any kind of
-          consultation? or want to ask questions? or have some advice for me
-          or just want to say "Hi 👋" in any case feel free to Let me know. I
-          will do my best to respond back. 😊 The quickest way to reach out to
-          me is via an email.
+          I am currently open to internship opportunities, 
+          collaborative projects, and any guidance from 
+          experienced developers. Whether you want to discuss 
+          technology, give me advice, or just want to say 
+          "Hi 👋" - feel free to reach out! I'll try to 
+          respond as quickly as possible. 😊
         </p>
-        <!-- Replace the email with yours -->
-        <a href="mailto:you@example.com" class="btn">you@example.com</a>
+
+        <!--
+          =====================================================
+          STEP 7: ADD YOUR EMAIL ADDRESS
+          Replace "your.email@example.com" with your real email
+          
+          TIP: Create a professional email like:
+          - mahmudurictu@gmail.com
+          - mahmudur.ictu@gmail.com
+          
+          AVOID unprofessional emails like:
+          - coolboy123@gmail.com
+          - ilovegames@gmail.com
+          =====================================================
+        -->
+        <a href="mailto:your.email@gmail.com" class="btn btn--pink">
+          your.email@gmail.com
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- ***** Footer ***** -->
-
+  <!-- 
+    =====================================================
+    FOOTER
+    Update all social media links
+    =====================================================
+  -->
   <footer role="contentinfo" class="footer">
     <div class="row">
-      <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
+
+        <!--
+          =====================================================
+          STEP 8: UPDATE ALL SOCIAL MEDIA LINKS
+          
+          IMPORTANT PROFILES TO HAVE AS IT STUDENT:
+          
+          1. GitHub ⭐⭐⭐ (Most Important!)
+             - Create account: github.com
+             - Upload all your projects
+             - Keep it active!
+             
+          2. LinkedIn ⭐⭐⭐ (Very Important!)
+             - Create account: linkedin.com
+             - Add your education, skills, projects
+             - Connect with professionals
+             - Get recommendations from teachers
+             
+          3. HackerRank ⭐⭐
+             - Solve programming problems
+             - Get skill badges
+             - profile.hackerrank.com/YOUR-USERNAME
+             
+          4. LeetCode (for coding interviews)
+             - leetcode.com
+             
+          5. Facebook (Optional but common in BD)
+          
+          Replace all href="#" with your actual profile URLs
+          =====================================================
+        -->
+
+        <!-- GitHub - MOST IMPORTANT -->
         <li class="footer__social-link-item">
-          <a href="https://twitter.com/nisarhassan12/" title="Link to Twitter Profile">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
+          <a href="https://github.com/YOUR-GITHUB-USERNAME" 
+             title="My GitHub Profile"
+             target="_blank">
+            <img src="./images/github.svg" 
+                 class="footer__social-image" 
+                 alt="GitHub">
           </a>
         </li>
+
+        <!-- LinkedIn - VERY IMPORTANT -->
         <li class="footer__social-link-item">
-          <a href="https://github.com/nisarhassan12/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" 
+             title="My LinkedIn Profile"
+             target="_blank">
+            <img src="./images/linkedin.svg" 
+                 class="footer__social-image" 
+                 alt="LinkedIn">
           </a>
         </li>
+
+        <!-- Twitter/X (Optional) -->
         <li class="footer__social-link-item">
-          <a href="https://codepen.io/nisar_hassan" title="Link to Codepen Profile">
-            <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
+          <a href="https://twitter.com/YOUR-TWITTER-USERNAME" 
+             title="My Twitter Profile"
+             target="_blank">
+            <img src="./images/twitter.svg" 
+                 class="footer__social-image" 
+                 alt="Twitter">
           </a>
         </li>
-        <li class="footer__social-link-item">
-          <a href=https://www.linkedin.com/in/nisar-hassan-naqvi-413466199/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a>
-        </li>
+
+        <!--
+          Optional: Add Facebook
+          <li class="footer__social-link-item">
+            <a href="https://facebook.com/YOUR-FB-USERNAME" 
+               title="My Facebook Profile"
+               target="_blank">
+              Facebook icon here
+            </a>
+          </li>
+        -->
+
       </ul>
 
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
+      <!-- Copyright - Update with your name and year -->
       <p>
-        &copy; 2020 - Template designed & developed by <a href="https://nisar.dev" class="link">Nisar</a>.
+        &copy; 2024 - Designed & Developed by 
+        <a href="#top" class="link">Md Mahmudur Rahman</a>
       </p>
-      <div class="footer__github-buttons">
-        <iframe
-          src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-          frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-        </iframe>
-      </div>
+
     </div>
   </footer>
 
+  <!-- Back to top button - Keep this! -->
   <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+    <img src="./images/arrow-up.svg" 
+         alt="Back to Top" 
+         class="back-to-top__image"/>
   </a>
+
   <script src="./index.js"></script>
 </body>
 
